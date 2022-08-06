@@ -15,6 +15,7 @@ import java.net.InetAddress;
 import java.util.Collection;
 
 import static com.rahim.server.enumeration.Status.SERVER_DOWN;
+import static java.lang.Boolean.TRUE;
 
 @Slf4j
 @Service
@@ -64,7 +65,9 @@ public class ServerServiceImplementation implements ServerService {
 
     @Override
     public Boolean delete(Long id) {
-        return null;
+        log.info("Deleting server by ID: {}", id);
+        serverRepo.deleteById(id);
+        return TRUE;
     }
 
     private String setServerImageUrl() {
