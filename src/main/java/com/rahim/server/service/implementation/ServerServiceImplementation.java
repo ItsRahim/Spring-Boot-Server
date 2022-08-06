@@ -6,6 +6,7 @@ import com.rahim.server.repository.ServerRepo;
 import com.rahim.server.service.ServerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -45,7 +46,8 @@ public class ServerServiceImplementation implements ServerService {
 
     @Override
     public Collection<Server> list(int limit) {
-        return null;
+        log.info("Fetching all servers");
+        return serverRepo.findAll(PageRequest.of(0, limit)).toList();
     }
 
     @Override
