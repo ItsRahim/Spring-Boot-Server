@@ -41,6 +41,7 @@ public class ServerServiceImplementation implements ServerService {
         Server server = serverRepo.findByIpAddress(ipAddress);
         // pinging IP Address
         InetAddress address = InetAddress.getByName(ipAddress);
+        // if ping is made within 10000 the status is set to UP or else its set to DOWN
         server.setStatus(address.isReachable(10000) ? Status.SERVER_UP : SERVER_DOWN);
         // once pinged, status will be updated
         serverRepo.save(server);
@@ -74,6 +75,7 @@ public class ServerServiceImplementation implements ServerService {
 
     private String setServerImageUrl() {
         String[] imageNames = {"server1.png","server2.png","server3.png","server4.png"};
+        // randomly selecting and image for the server model created
         return ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/server/image/" + imageNames[new Random().nextInt(4)]).toUriString();
     }
