@@ -10,6 +10,9 @@ import java.util.Map;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
+/*
+Allows us to build a body with the message/data to send back to user
+ */
 @Data
 @SuperBuilder
 @JsonInclude(NON_NULL)

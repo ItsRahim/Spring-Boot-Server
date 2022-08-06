@@ -26,7 +26,8 @@ public class ServerResource {
     private final ServerServiceImplementation serverService;
 
     /*
-    ResponseEntity allows Java to build an HTTP response which can be formatted byu styling
+    ResponseEntity allows Java to build an HTTP response which can be formatted by styling
+    Creating responses for different URL requests
      */
 
     @GetMapping("/list")

@@ -15,7 +15,7 @@ public class SpringBootServerApplication {
         SpringApplication.run(SpringBootServerApplication.class, args);
     }
 
-    @Bean
+    /*@Bean
     CommandLineRunner commandLineRunner(ServerRepo serverRepo) {
         return args -> {
             serverRepo.save(new Server(
@@ -27,5 +27,5 @@ public class SpringBootServerApplication {
                     "http://localhost:8080/server/image/server1.png",
                     Status.SERVER_UP));
         };
-    }
+    }*/
 }

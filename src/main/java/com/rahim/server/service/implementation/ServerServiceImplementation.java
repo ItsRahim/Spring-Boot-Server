@@ -19,6 +19,9 @@ import java.util.Random;
 import static com.rahim.server.enumeration.Status.SERVER_DOWN;
 import static java.lang.Boolean.TRUE;
 
+/*
+Implementing the backend logic for requests made by user
+ */
 @Slf4j
 @Service
 @Transactional
